@@ -3,7 +3,7 @@ const jwt_secret = "StRoNg PaSsWoRd";
 
 // Return user id from jwt token
 const fetchUser = (req, res, next) => {
-  const authToken = req.header("auth-token");
+  const authToken = req.headers("auth-token");
 
   if (!authToken) {
     res.status(401).send({
