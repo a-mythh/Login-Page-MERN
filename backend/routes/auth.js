@@ -33,7 +33,7 @@ router.post(
 
     try {
       // check if user with same email already present
-      let user = await User.findOne({ email: req.body.email });
+      let user = await User.findOne({ email});
       if (user) {
         return res.status(400).json({
           success,
@@ -63,7 +63,7 @@ router.post(
       res.json({ success, authToken });
     } catch (error) {
       console.error("Error: " + error.message);
-      res.status(500).send("Internal Server Error.");
+      res.status(500).send(error.message);
     }
   }
 );
