@@ -10,6 +10,11 @@ import SignupForm from "./signupForm.jsx";
 
 const host = import.meta.env.VITE_API_DEVELOPMENT_URL;
 
+const config = {
+  headers: { "Content-Type": "application/json" },
+  withCredentials: true,
+};
+
 const FirstScreen = () => {
   const [showSignupForm, setShowSignupForm] = useState(false);
   const [signupData, setsignupData] = useState({
@@ -33,7 +38,7 @@ const FirstScreen = () => {
         return;
       }
 
-      const response = await axios.post(`${host}/auth/signup`, signupData);
+      const response = await axios.post(`${host}/auth/signup`, signupData, config);
       console.log("Signup Response:", response.data);
 
       if (response.data.success == true) {
@@ -49,7 +54,7 @@ const FirstScreen = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post(`${host}/auth/login`, loginData);
+      const response = await axios.post(`${host}/auth/login`, loginData, config);
       console.log("Login Response:", response.data);
 
       if (response.data.success == true) {
@@ -83,8 +88,7 @@ const FirstScreen = () => {
     if (localStorage.getItem("token")) {
       navigate("/home");
     }
-  }, [])
-  
+  }, []);
 
   return (
     <div className="flex flex-col-reverse justify-end items-center sm:flex-row h-screen">

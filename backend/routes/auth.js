@@ -6,7 +6,7 @@ const fetchUser = require("../middlewares/fetch_user");
 // Authentication imports
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-require('dotenv').config();
+require("dotenv").config();
 const jwt_secret = process.env.JWT_SECRET;
 
 const router = express.Router();

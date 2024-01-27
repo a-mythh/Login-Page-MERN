@@ -7,7 +7,9 @@ connectToMongo();
 const app = express();
 const PORT = 3000;
 
-app.use(cors());
+app.use(
+  cors({ origin: "https://login-page-mern-pi.vercel.app", credentials: true })
+);
 
 // Middlewares
 app.use(express.json()); // to read json request from user
