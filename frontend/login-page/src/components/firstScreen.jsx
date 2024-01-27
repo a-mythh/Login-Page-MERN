@@ -8,7 +8,7 @@ import LoginForm from "./loginForm.jsx";
 import SideImage from "./sideImage.jsx";
 import SignupForm from "./signupForm.jsx";
 
-const host = "http://localhost:3000";
+const host = import.meta.env.VITE_API_DEVELOPMENT_URL;
 
 const FirstScreen = () => {
   const [showSignupForm, setShowSignupForm] = useState(false);

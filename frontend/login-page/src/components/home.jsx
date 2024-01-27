@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const host = "http://localhost:3000";
+const host = import.meta.env.VITE_API_DEVELOPMENT_URL;;
 
 const Home = () => {
   const [user, setUser] = useState(null);
