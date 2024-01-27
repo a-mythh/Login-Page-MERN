@@ -1,7 +1,9 @@
 # Simple Login Page using MERN Stack
 
 <p align="center">
-  <img src="/icons/recipe.png" alt="Login Page" width="10%">
+  <img src="/snapshots/login page.png" alt="Login Page" width="45%">
+  <img src="/snapshots/home page.png" alt="Home Page" style="display: block; width: 45%;">
+  <img src="/snapshots/mobile login page.png" alt="Login Page on Mobile" height="25%" width="25%">
 </p>
 
 ## Overview
