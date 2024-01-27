@@ -121,7 +121,7 @@ router.post(
       res.json({ success, authToken });
     } catch (error) {
       console.error("Error: " + error.message);
-      res.status(500).send("Internal Server Error.");
+      res.status(500).send(error.message);
     }
   }
 );
@@ -132,11 +132,11 @@ router.post("/getuser", fetchUser, async (req, res) => {
     // get user ID from req which was decoded by middleware fetchUser
     const userID = req.user.id;
 
-    const userDetails = await User.findById({userID}).select("-password");
+    const userDetails = await User.findById(userID).select("-password");
     res.send(userDetails);
   } catch (error) {
     console.error("Error: " + error.message);
-    res.status(500).send("Internal Server Error.");
+    res.status(500).send(error.message);
   }
 });
 
