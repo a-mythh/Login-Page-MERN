@@ -1,9 +1,10 @@
 const jwt = require("jsonwebtoken");
-const jwt_secret = "StRoNg PaSsWoRd";
+require("dotenv").config();
+const jwt_secret = process.env.JWT_SECRET;
 
 // Return user id from jwt token
 const fetchUser = (req, res, next) => {
-  const authToken = req.headers("auth-token");
+  const authToken = req.header("auth-token");
 
   if (!authToken) {
     res.status(401).send({
