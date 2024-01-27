@@ -2,7 +2,7 @@
   "name": "login_page",
   "version": "1.0.0",
   "description": "This is a simple login page for a mini project for refreshing react/javascript",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
