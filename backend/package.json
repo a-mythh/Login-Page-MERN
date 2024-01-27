@@ -4,6 +4,7 @@
   "description": "This is a simple login page for a mini project for refreshing react/javascript",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Amit Das",
